@@ -27,12 +27,22 @@ html, body {
 /* turns this header to a flex box contatiner which makes it super easy to line up things next to each other (horizontally-row or vertically-column) and control their spacing.*/
 .header {
     display: flex;
-    justify-content: space-between; /* left, center, right */
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     padding: 20px 5%;
     background-color: #555;
-    position: sticky; /*Stick it to the top while scrolling*/
+    position: sticky;
+}
+
+.header-left,
+.header-right {
+    flex: 1;
+}
+
+.header-right {
+    display: flex;
+    justify-content: flex-end;
 }
  
 /* Logo */
@@ -57,8 +67,10 @@ You repeated it twice it makes the glow look stronger and brighter, because two 
 .nav-bar {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 30px;
-    flex-wrap: wrap; /* allows wrapping if too wide */
+    flex: 1;
+    flex-wrap: wrap;
 }
 
 .nav-bar a {
@@ -68,7 +80,16 @@ You repeated it twice it makes the glow look stronger and brighter, because two 
     transition: 0.3s ease;
 }
 
-.nav-bar a:hover {
+.links {
+    color: whitesmoke;
+    text-align: center;
+    font-weight: 100;
+    font-size: 8px;
+    white-space: nowrap;
+}
+
+
+.nav-bar a:not(.links):hover {
     color:orangered;
 }
 
@@ -232,6 +253,11 @@ You repeated it twice it makes the glow look stronger and brighter, because two 
     max-width: 80%;
     border-radius: 50%;
     margin-top: 100px;
+}
+
+h2 {
+    font-size: 48px;
+    text-align: center;
 }
 
 /* CONTACT FORM */
