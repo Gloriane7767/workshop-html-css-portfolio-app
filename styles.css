@@ -203,7 +203,7 @@ You repeated it twice it makes the glow look stronger and brighter, because two 
 
 .btn-1 {
     background-color:orangered;
-    padding: 10px 20px;
+    padding: 10px 20px 10px;
     color: white;
     border: 2px solid transparent;
     border-radius: 8px;
