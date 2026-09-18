@@ -1,417 +1,341 @@
+/* ---------- Tokens ---------- */
+:root {
+  --ink: #1B2430;
+  --panel: #232E3D;
+  --panel-light: #2C3A4D;
+  --paper: #F3F1EA;
+  --paper-dim: #C9C6BC;
+  --gold: #D9A441;
+  --slate: #8B95A3;
+  --line: rgba(243, 241, 234, 0.12);
 
-/* GLOBAL STYLES */ 
-/* It resets the browser setting so the web page behave thesame on all browsers
-and applies the styles to the entire web page*/
-*{
-    font-family: poppins, sans-serif;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box; /* add up padding and border inclusive to the weight and height*/
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --max-width: 1120px;
+  --radius: 10px;
 }
 
-/* to enabble the page flush completely to the top and left cos though we used the universal selector
-some browsers still give the <body> tag a small default margin (usually 8px)*/
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%; /*ensures the <html> and <body> stretch across the entire width of the browser window just so caculations are accurate, especially when working with 100%-width sections or background colors.*/
-    overflow-x: hidden; /* prevents horizontal scroll from small overflow */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-.logo span, .intro-span, .intro-content-span {
-    color: red;
-    transition: 0.3s ease;
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
 
-/* HEADER */
-/* turns this header to a flex box contatiner which makes it super easy to line up things next to each other (horizontally-row or vertically-column) and control their spacing.*/
+h1, h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+}
+
+h1 { font-size: clamp(2rem, 4vw, 3rem); }
+h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
+
+p { color: var(--paper-dim); margin: 0 0 1em; }
+
+a { color: inherit; text-decoration: none; }
+
+section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 100px 32px;
+}
+
+.section-lede { margin-top: -8px; margin-bottom: 40px; max-width: 60ch; }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-primary { background: var(--gold); color: var(--ink); }
+.btn-primary:hover { background: #c6923a; }
+
+.btn-ghost { border-color: var(--line); color: var(--paper); }
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ---------- Header ---------- */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 20px 5%;
-    background-color: #555;
-    position: sticky;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 32px;
+  background: rgba(27, 36, 48, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
 }
 
-.header-left,
-.header-right {
-    flex: 1;
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+}
+.logo span { color: var(--gold); }
+
+.nav-bar { display: flex; gap: 28px; }
+.nav-bar a { color: var(--paper-dim); font-size: 0.95rem; }
+.nav-bar a:hover { color: var(--paper); }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--paper);
+  font-size: 1.6rem;
+  cursor: pointer;
 }
 
-.header-right {
-    display: flex;
-    justify-content: flex-end;
-}
- 
-/* Logo */
-.header-left .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    transition: 0.3s ease;/* animation last for 3secs and should not be fast*/
-}
+.header-cta { flex-shrink: 0; }
 
-/* → horizontal offset (no left or right shift)
-→ vertical offset (no up or down shift)
-50px → blur size (how soft and glowing the shadow looks
-You repeated it twice it makes the glow look stronger and brighter, because two identical shadows overlap.*/
-.logo:hover {
-    color:orangered;
-    text-shadow:0 0 50px orangered,  
-                0 0 50px orangered;
+/* ---------- Hero ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  padding-top: 80px;
+  animation: rise 0.7s ease both;
 }
 
-/* Nav Links */
-.nav-bar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    flex: 1;
-    flex-wrap: wrap;
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.nav-bar a {
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    transition: 0.3s ease;
+.hero-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--gold);
+  margin-bottom: 14px;
 }
 
-.links {
-    color: whitesmoke;
-    text-align: center;
-    font-weight: 100;
-    font-size: 8px;
-    white-space: nowrap;
+.hero-lede { max-width: 52ch; }
+
+.hero-actions { display: flex; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
+
+.code-window {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.35);
 }
 
-
-.nav-bar a:not(.links):hover {
-    color:orangered;
+.code-window-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--panel-light);
+  border-bottom: 1px solid var(--line);
 }
 
-/* Header Button */
-.header-right .button {
-    padding: 10px 15px;
-    border-radius: 10px;
-    background-color: black;
-    color: white;
-    font-weight: bold;
-    line-height: 1.2;
+.dot { width: 10px; height: 10px; border-radius: 50%; background: var(--slate); opacity: 0.5; }
+.file-name { margin-left: 10px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--slate); }
+
+.code-window-body {
+  margin: 0;
+  padding: 22px 20px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--paper-dim);
+  overflow-x: auto;
 }
 
-.header .button:hover  {
-    background-color: orangered;
-    color: black;
-}
+.tok-kw { color: var(--gold); }
+.tok-class { color: #8FB8DE; }
+.tok-str { color: #B7CE8C; }
+.tok-fn { color: #E0C88C; }
 
-/* Intro SECTION */
-.intro-section {
-    width: 100%;
-    padding: 50px 5%;  /* 50px top/ bottom fixed, 5% left and right responsive  to shrinks*/
-    background-color: white;
-    text-align: left;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    gap: 2em;
-}
-
-.intro-section h2 {
-    font-size: 48px;   /* You can adjust this number as needed */
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: left;  
-}
-
-.intro-section h3 {
-    font-size: 24px;
-    margin: 10px 0;
-}
-
-.intro-section h1 {
-    font-size: 36px;
-    margin: 10px 0 20px;
-    line-height: 1.2;
-}
-
-.intro-section p {
-    font-size: 18px;
-    margin-bottom: 15px;
-    line-height: 1.6;
-    text-align: justify;
-}
-
-.intro-image-box img{
-    max-width: 80%;
-    border-radius: 50%;
-    margin-top: 100px;
-}
-
-
-/* Reuse existing button styles */
-.intro-section .btn-1 {
-    margin-top: 20px;
-    display: inline-block;
-}
-
-/* ABOUT SECTION */
-.about-container {
-    width: 100vw; /* It doesn’t matter what container the element is in — it stretches across the whole screen width. */
-    padding: 0;
-    background-color: black;  
-}
-
+/* ---------- About ---------- */
 .about {
-    width: 100%;
-    min-height: 100vh; /* min-height: 100vh; → make this element at least as tall as the screen, but allow it to grow taller if needed.*/
-    display: flex;
-    align-items: flex-start;
-    gap: 2em;
-    justify-content: space-between;
-    padding: 30px 5% 0 5%; 
-    background-color: black;
-    
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 56px;
+  align-items: start;
 }
 
-.about-content h2 {
-    color: white;
-    font-size: 48px;   
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: left;  
+.about-image img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 4px solid var(--panel);
+  outline: 1px solid var(--line);
 }
 
-.about-content p {
-    text-align: justify;
-    color: white;
+.about-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 28px;
+  flex-wrap: wrap;
 }
 
-.about-span {
-    color: orangered;
+.about-stats strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--gold);
 }
 
-.btn-box {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    margin-top: 20px;
+.about-stats span {
+  font-size: 0.85rem;
+  color: var(--slate);
 }
 
-.btn-1 {
-    background-color:orangered;
-    padding: 10px 20px 10px;
-    color: white;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    letter-spacing: 1px;
-    font-weight: bold;
-    font-size: 16px;
-    transition: 0.3s ease;
-    cursor: pointer;
-    width: 150px;
-    height: 45px;
+/* ---------- Skills ---------- */
+.skill-panels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-.about .btn-1:hover  {
-    background-color: white;
-    color: orangered;
+.skill-panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 24px;
 }
 
-.btn-2 {
-    background-color: black;
-    padding: 10px 20px;
-    color: orangered;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    letter-spacing: 1px;
-    font-weight: bold;
-    font-size: 16px;
-    transition: 0.3s ease;
-    cursor: pointer;
-    width: 150px;
-    height: 45px;
-    margin-top: 10px;
+.skill-panel-label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--slate);
+  margin-bottom: 16px;
 }
 
-.intro-section .btn-1:hover {
-    background-color: black;
-    color: orangered;
-    border: 2px solid orangered;
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.tag {
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  border-radius: 5px;
+  background: var(--panel-light);
+  color: var(--paper);
 }
 
-.intro-section .btn-2:hover {
-    background-color: orangered;
-    color: white;
-    border: 2px solid orangered;
+/* ---------- Projects ---------- */
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+
+table { width: 100%; border-collapse: collapse; min-width: 560px; }
+
+thead { background: var(--panel); }
+
+th, td {
+  text-align: left;
+  padding: 14px 18px;
+  font-size: 0.92rem;
+  border-bottom: 1px solid var(--line);
 }
 
-.about-image-box img{
-    max-width: 80%;
-    border-radius: 50%;
-    margin-top: 100px;
+th { color: var(--slate); font-weight: 500; font-family: var(--font-mono); font-size: 0.78rem; }
+
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: rgba(255,255,255,0.02); }
+
+.status { padding: 4px 10px; border-radius: 5px; font-size: 0.8rem; }
+.status-done { background: rgba(183, 206, 140, 0.15); color: #B7CE8C; }
+.status-planned { background: rgba(217, 164, 65, 0.15); color: var(--gold); }
+
+/* ---------- Contact ---------- */
+.contact-form { max-width: 640px; }
+
+.input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.input-box { margin-bottom: 20px; }
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--slate);
+  margin-bottom: 6px;
 }
 
-h2 {
-    font-size: 48px;
-    text-align: center;
+input, textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--paper);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  resize: vertical;
 }
 
-/* CONTACT FORM */
-.form-container {
-    width: 100%;
-    padding: 30px 5%;
-    background-color:white;
-    text-align: center;
-}
+input::placeholder, textarea::placeholder { color: var(--slate); }
 
-
-.contact-form form {
-    width: 100%;
-    max-width: 80%; /*the element won’t get wider than 800 pixels, no matter how big the screen is.*/
-    margin: 0 auto;
-}
-
-.contact-form h2 {
-    text-align: center;     
-    padding-left: 5%;       
-    margin-bottom: 20px;   
-    font-size: 48px;        
-}
-
-.contact-span {
-color: orangered;
-}
-
-.contact-form form .input-box input,
-.contact-form form textarea {
-    width: 100%; 
-    padding: 15px;
-    font-size: 18px;
-    color: black;
-    background-color: white;
-    border-radius: 0.8rem;
-    margin: 1rem 0;
-    resize: none;
-}
-
-input[type="submit"]:hover {
-    background-color: black !important;
-    color: orangered !important;
-    border: 2px solid orangered !important;
-}
-
-
-/* TABLE SECTION */
-.table-container {
-    width: 100%;
-    padding: 30px 5%; 
-    background-color: white;
-    text-align: center;
-}
-
-.table-container h2 {
-    font-size: 48px;
-    margin-bottom: 10px;
-}
-
-.table-container .subtitle {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: black;
-}
-
-.portfolio-table {
-    width: 100%;
-    overflow-x: auto;
-    margin-top: 20px;
-}
-
-.portfolio-table table {
-    width: 100%;
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-
-.portfolio-table th,
-.portfolio-table td {
-    border: 1px solid black;
-    padding: 12px;
-    text-align: left;
-}
-
-/* FOOTER SECTION */
+/* ---------- Footer ---------- */
 .footer {
-    position: relative;
-    width: 100vw;
-    background-color: #555;
-    padding: 30px 5%;
-    text-align: center;
+  border-top: 1px solid var(--line);
+  padding: 40px 32px;
+  text-align: center;
 }
 
-/*Position Type	What Happens
-static (default)	Normal flow, no offsets
-relative	Normal flow + can shift with top/right/bottom/left
-absolute	Removed from flow, positioned relative to nearest positioned ancestor
-fixed	Stays in place relative to viewport
-sticky	Sticks to a position when scrolling*/
-.footer .social {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 20px 0 10px;
+.social { display: flex; justify-content: center; gap: 18px; margin-bottom: 16px; font-size: 1.4rem; }
+.social a { color: var(--slate); }
+.social a:hover { color: var(--gold); }
+
+.copyright { font-size: 0.85rem; color: var(--slate); margin: 0; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .hero, .about { grid-template-columns: 1fr; }
+  .hero-visual, .about-image { order: -1; }
+  .about-image img { max-width: 280px; }
+  .skill-panels { grid-template-columns: 1fr; }
+  .input-row { grid-template-columns: 1fr; }
 }
 
-.footer .social a {
-    font-size: 24px;
-    color: white;
-    height: 40px;
-    line-height: 36px;
-    display: inline-block; /*Sit next to other elements like inline, but let me set width, height, and padding like a block.”*/
-    text-align: center;
-    margin: 0 8px;
-    transition: 0.3s ease;
+@media (max-width: 700px) {
+  .nav-bar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--ink);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    padding: 20px 32px;
+    display: none;
+    gap: 16px;
+  }
+  .nav-bar.open { display: flex; }
+  .nav-toggle { display: block; }
+  .header-cta { display: none; }
+  section { padding: 64px 20px; }
 }
-
-.footer .social a:hover{
-    box-shadow: inset 0 40px 0 0 orangered, 
-                0 0 10px orangered;
-    color: black;
-    border: 2px solid orangered;
-}
-
-.footer ul {
-    margin: 0;
-    padding: 0;
-    font-size: 18px;
-    line-height: 1.6;
-    text-align: center;
-}
-
-.footer ul li {
-    display: inline-block;
-    margin: 0 15px;
-}
-
-.footer ul li a {
-    color: white;
-}
-
-.footer ul li a:hover {
-    color: orangered;
-}
-
-.footer .copyright {
-    margin-top: 15px;
-    text-align: center;
-    color: white;
-    font-size: 12px;
-}
-
-
-
-
