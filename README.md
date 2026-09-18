@@ -37,7 +37,7 @@ The webpage features hover effects, a sticky header, and responsive layout techn
 > Replace `screenshot.png` with your actual screenshot file, or use a link to your hosted image.
 
 - Optional live site (if deployed):  
-  **Live Demo:** https://<gloriane7767>.github.io/<html-css-workshop-portfolio-app>/
+  **Live Demo:** [https://<gloriane7767>.github.io/<html-css-workshop-portfolio-app>/](https://gloriane7767.github.io/workshop-html-css-portfolio-app/)
 ---
 
 ## Deployment to GitHub Pages
