@@ -33,7 +33,7 @@ The webpage features hover effects, a sticky header, and responsive layout techn
 ---
 
 ## Live Demo / Screenshot
-![Screenshot of the project](./images/portfolio.png.png)  
+![Screenshot of the project](./images/portfolio.png)  
 > Replace `screenshot.png` with your actual screenshot file, or use a link to your hosted image.
 
 - Optional live site (if deployed):  
