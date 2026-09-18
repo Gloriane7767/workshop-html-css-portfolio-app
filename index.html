@@ -1,171 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Simple Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glory Ngum Foncha — Full Stack Developer</title>
+  <meta name="description" content="Portfolio of Glory Ngum Foncha, Java Full Stack Developer trained at Lexicon AB, Sweden.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <!-- HEADER -->
-    <header class="header">
-    
-    <div class="header-left">
-        <a href="#" class="logo"><span class="span-logo">Port</span>folio</a>
-    </div>
-    
-    <nav class="nav-bar">
-        <a href="#education">Education</a>
-        <a href="mailto:gloriane7767@gmail.com" class="links">Email</a>
-        <a href="https://github.com/gloriane7767" class="links" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/gloryngumfoncha" class="links" target="_blank">LinkedIn</a>
-    </nav>
-    
-    <div class="header-right">
-        <button class="button">Contact Me</button>
-    </div>
-    </header>
 
-    <!-- INTRO SECTION-->
-    <section class="intro-section" id="intro">
-    
-    <div class="intro-content">  
-      <h3>Hi!</h3>
-      <h1>I'm <span class="intro-content-span">Glory Ngum Foncha</span><br /> Full Stack Developer | Java • Spring Boot • React</h1>
-      <p>
-        I have a strong passion for building clean, functional, and user-focused digital experiences. I’m dedicated to creating responsive, user-friendly, and scalable web applications. I enjoy solving complex problems and turning creative ideas into real-world digital products. My work combines technical expertise with thoughtful design and a focus on user experience. I strive to write clean, maintainable code and continuously grow through new projects, challenges, and learning opportunities
+  <!-- HEADER -->
+  <header class="header">
+    <a href="#top" class="logo">Glory<span>.</span>dev</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <i class='bx bx-menu'></i>
+    </button>
+
+    <nav class="nav-bar" id="navBar">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#contact" class="btn btn-primary header-cta">Get in touch</a>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-text">
+        <p class="hero-kicker">Lexicon AB Sweden Graduate</p>
+        <h1>Hi, I'm Glory Ngum Foncha.<br>I build full stack apps<br>with Java and React.</h1>
+        <p class="hero-lede">
+          I design and build reliable, user-focused web applications end to end —
+          from Spring Boot APIs to responsive React interfaces. Recently graduated
+          from a Full Stack Web Development (Java) and Generative AI program,
+          and looking for my first role as a developer.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">See my work</a>
+          <a href="mailto:gloriane7767@gmail.com" class="btn btn-ghost">Email me</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="code-window">
+          <div class="code-window-bar">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="file-name">Developer.java</span>
+          </div>
+          <pre class="code-window-body"><code><span class="tok-kw">public class</span> <span class="tok-class">Developer</span> {
+
+  <span class="tok-kw">private</span> String name = <span class="tok-str">"Glory Ngum Foncha"</span>;
+  <span class="tok-kw">private</span> String[] stack = {
+    <span class="tok-str">"Java"</span>, <span class="tok-str">"Spring Boot"</span>,
+    <span class="tok-str">"React"</span>, <span class="tok-str">"TypeScript"</span>
+  };
+
+  <span class="tok-kw">public</span> <span class="tok-kw">void</span> <span class="tok-fn">buildSomethingUseful</span>() {
+    <span class="tok-kw">while</span> (learning) {
+      shipCode();
+      improve();
+    }
+  }
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="about-image">
+        <img src="images/gloriane.jpeg" alt="Portrait of Glory Ngum Foncha">
+      </div>
+
+      <div class="about-content">
+        <h2>About me</h2>
+        <p>
+          My path into software development started with curiosity and grew into a
+          real commitment to understanding how modern web applications work —
+          from responsive interfaces to scalable backend systems and REST APIs.
+          I built my foundation through an intensive Full Stack Web Development
+          program in Java at Lexicon AB, Sweden, alongside open-source learning
+          and personal projects spanning both frontend and backend.
+        </p>
+        <p>
+          On the backend, I work with Java, Spring Boot, Spring Framework, REST
+          APIs, JDBC, and SQL. On the frontend, I build with React, TypeScript,
+          JavaScript, and modern, responsive UI practices. I'm also comfortable
+          with Node.js, Express, and MongoDB, and I'm currently exploring
+          Generative AI and API integrations.
+        </p>
+        <p>
+          What draws me to this work is problem-solving: breaking a complex
+          requirement into a simple, working solution. Beyond code, I value
+          clear communication, teamwork, and steady, honest progress — my goal
+          is to grow into a developer who builds software that's genuinely
+          useful to the people who rely on it.
+        </p>
+
+        <div class="about-stats">
+          <div><strong>Java</strong><span>Primary backend language</span></div>
+          <div><strong>React</strong><span>Primary frontend library</span></div>
+          <div><strong>2025</strong><span>Lexicon AB graduate</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills" id="skills">
+      <h2>What I work with</h2>
+      <p class="section-lede">Grouped by where each tool sits in the stack.</p>
+
+      <div class="skill-panels">
+        <div class="skill-panel">
+          <p class="skill-panel-label">// frontend</p>
+          <div class="tag-row">
+            <span class="tag">React</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">Bootstrap</span>
+          </div>
+        </div>
+
+        <div class="skill-panel">
+          <p class="skill-panel-label">// backend</p>
+          <div class="tag-row">
+            <span class="tag">Java</span>
+            <span class="tag">Spring Boot</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">JDBC</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Express</span>
+          </div>
+        </div>
+
+        <div class="skill-panel">
+          <p class="skill-panel-label">// data &amp; tools</p>
+          <div class="tag-row">
+            <span class="tag">SQL</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">Postman</span>
+            <span class="tag">Generative AI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects" id="projects">
+      <h2>Project showcase</h2>
+      <p class="section-lede">A summary of recent web development projects.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Project</th>
+              <th>Stack</th>
+              <th>Completed</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>01</td>
+              <td>Portfolio Website</td>
+              <td>HTML, CSS, JavaScript</td>
+              <td>Nov 2025</td>
+              <td><span class="status status-done">Completed</span></td>
+            </tr>
+            <tr>
+              <td>02</td>
+              <td>E-Commerce App Demo</td>
+              <td>React, Node.js, MongoDB</td>
+              <td>Mar 2024</td>
+              <td><span class="status status-done">Completed</span></td>
+            </tr>
+            <tr>
+              <td>03</td>
+              <td>Contact Management App</td>
+              <td>HTML, CSS, JavaScript</td>
+              <td>Jan 2024</td>
+              <td><span class="status status-done">Completed</span></td>
+            </tr>
+            <tr>
+              <td>04</td>
+              <td>Calculator App</td>
+              <td>Vue.js, Firebase</td>
+              <td>Apr 2024</td>
+              <td><span class="status status-planned">Planned</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <h2>Get in touch</h2>
+      <p class="section-lede">
+        Open to entry-level and junior full stack roles. The fastest way to
+        reach me is email — the form below opens your mail client.
       </p>
 
-      <div class="btn-box">
-        <button class="btn-1">Experience</button>
-        <button class="btn-2">Hire Me</button>
-      </div>
-      </div>
-      </div>
-    
-    <div class="intro-image-box"> 
-                <img src="images/gloriane.jpeg" alt="profile image" />
-            </div>
+      <form class="contact-form" action="mailto:gloriane7767@gmail.com" method="post" enctype="text/plain">
+        <div class="input-row">
+          <div class="input-box">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="input-box">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+        </div>
+
+        <div class="input-box">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="What would you like to talk about?" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send message</button>
+      </form>
     </section>
-    
-              <!-- ABOUT SECTION-->
-    <main class="about-container">
-        <section class="about">
-            <div class="about-image-box"> 
-                <img src="images/gloriane.jpeg" alt="profile image" />
-            </div>
-           
-            <div class="about-content">
-            
-       <h2>About <span class="about-span">Me</span></h2>
-            
-        <p> I’m a Full Stack Developer with a strong passion for building practical, user-focused applications and continuously improving my skills through hands-on learning. My journey into software development started with curiosity and grew into a commitment to understanding how modern web applications work — from creating responsive user interfaces to developing scalable backend systems and REST APIs. I’ve built my foundation through intensive bootcamp training, open-source learning, and personal projects focused on both frontend and backend development. On the frontend, I work with HTML, CSS, JavaScript, React.js, Bootstrap, and modern UI practices to create clean, responsive, and interactive experiences. On the backend, I’ve been developing my skills in Java, Spring Boot, Spring Framework, REST APIs, JDBC, SQL, Node.js, Express.js, and MongoDB. I also enjoy working with Git, version control, and understanding software architecture and clean code principles.
-        </p>
-                
-        <p>What excites me most about software development is problem-solving — breaking down complex challenges into simple, functional solutions. I enjoy learning new technologies, improving existing systems, and understanding how different parts of an application connect together. Through projects such as Todo applications, parking management systems, REST APIs, and React-based web apps, I’ve developed a mindset focused on adaptability, continuous learning, and writing maintainable code. Beyond coding, I value teamwork, communication, and growth. I’m currently expanding my knowledge in Spring Boot, scalable backend systems, and modern full stack development practices, while exploring Generative AI and API integrations. My goal is to grow into a developer who builds reliable, scalable, and meaningful software that creates real impact for users and businesses alike.</p>
-               
-                <button class="btn-1">Learn More</button>
-            </div>
-        
-        </section>
-    </main>
-            <!-- CONTACT FORM SECTION -->
-        <section class="contact-form">
-                <h2 class="contact-me">Contact <span class="contact-span">Me</span></h2>
+  </main>
 
-            <form action="#">
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="social">
+      <a href="https://www.facebook.com/ngumglo" target="_blank" rel="noopener" aria-label="Facebook"><i class='bx bxl-facebook-circle'></i></a>
+      <a href="https://linkedin.com/in/gloryngumfoncha" target="_blank" rel="noopener" aria-label="LinkedIn"><i class='bx bxl-linkedin-square'></i></a>
+      <a href="https://github.com/gloriane7767" target="_blank" rel="noopener" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+      <a href="https://instagram.com/gloriane_7767" target="_blank" rel="noopener" aria-label="Instagram"><i class='bx bxl-instagram-alt'></i></a>
+    </div>
+    <p class="copyright">Built by Glory Ngum Foncha · © 2025 All rights reserved</p>
+  </footer>
 
-                <div class="input-box">
-                    <input type="text" placeholder="Full Name">  
-                </div>
-
-                <div class="input-box">
-                    <input type="email" placeholder="Email"/>
-                </div>
-
-                <div class="input-box">
-                    <input type="number" placeholder="Phone Number"/>
-                </div>
-                 
-                <textarea name="" id="" col=""30 row=""10 placeholder="Your Message"></textarea>
-                    <input type="submit" value="Submit" class="btn-1" style="display: block; margin: 0 auto;"/>
-                </div>
-            </form>
-            
-        </section>
-
-           <!-- TABLE SECTION -->
-    <section class="table-container">
-                <h2 class="title">My Project Showcase</h2>
-                <p class="subtitle">A summary of some of my recent web development projects</p>
-
-                <div class="portfolio-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Project Name</th>
-                                <th>Technologies Stack</th>
-                                <th>Completion Date</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <td>01</td>
-                                <td>Portfolio Website</td>
-                                <td>HTML, CSS, JavaScript</td>
-                                <td>November 2025</td>
-                                <td>Completed</td>
-                            </tr>
-
-                            <tr>
-                                <td>02</td>
-                                <td>E-Commerce App Demo</td>
-                                <td>React, Node.js, MongoDB</td>
-                                <td>March 2024</td>
-                                <td>Completed</td>
-                            </tr>
-
-                            <tr>
-                                <td>03</td>
-                                <td>Contact Management App</td>
-                                <td>HTML, CSS, JavaScript</td>
-                                <td>January 2024</td>
-                                <td>Completed</td>
-                            </tr>
-
-                            <tr>
-                                <td>04</td>
-                                <td>Calculator App</td>
-                                <td>Vue.js, Firebase</td>
-                                <td>April 2024</td>
-                                <td>Planned</td>
-                            </tr> 
-                        </tbody>
-                    </table>
-                </div>
-            </section>  
-    
-        <!-- FOOTER -->
-        <footer class="footer">
-            <div class="social">
-                <a href="#"><i class='bx bxl-facebook-circle'></i></a>
-                <a href="#"><i class='bx bxl-linkedin-square'></i></a>
-                <a href="#"><i class='bx bxl-twitter'></i></a>
-                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-            </div>
-            <ul class="list">
-                <li><a href="#">FQA</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">About Me</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Privacy</a></li>
-            </ul>
-            <p class="copyright">Created By Foncha | © 2025 All Rights Reserved</p>
-            </footer>
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navBar = document.getElementById('navBar');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navBar.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+    navBar.querySelectorAll('a').forEach(link =>
+      link.addEventListener('click', () => {
+        navBar.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', false);
+      })
+    );
+  </script>
 </body>
 </html>
