@@ -33,7 +33,7 @@ The webpage features hover effects, a sticky header, and responsive layout techn
 ---
 
 - Optional live site (if deployed):  
-  **Live Demo:** [https://<gloriane7767>.github.io/<html-css-workshop-portfolio-app>/](https://gloriane7767.github.io/workshop-html-css-portfolio-app/)
+  **Live Demo:** [https://<gloriane7767>.github.io/portfolio<gloriane7767.github.io/portfolio/>](https://gloriane7767.github.io/portfolio)
 ---
 
 ## Deployment to GitHub Pages
